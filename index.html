@@ -166,6 +166,7 @@ button{font-family:inherit;color:inherit}
  #app.phone .badge{width:20px;height:20px;font-size:11px;top:-6px;left:-6px}
  #app.phone .vtag{top:5px;right:5px;font-size:9px}
 </style>
+<style id="nozoom">html,body,button,.tb,*{touch-action:manipulation}#board,#board *{touch-action:none}</style>
 </head>
 <body>
 <div id="app">
@@ -594,5 +595,6 @@ drawStatic();initLayout();render();tickShow();
 if(!lsGet(KEY+"-how"))openHow();else if(!S.solved)startTimer();
 if(S.solved)setTimeout(showResult,400);
 </script>
+<script id="nozoomjs">["gesturestart","gesturechange","gestureend"].forEach(function(e){document.addEventListener(e,function(ev){ev.preventDefault()},{passive:false})});document.addEventListener("dblclick",function(ev){ev.preventDefault()},{passive:false});</script>
 </body>
 </html>
